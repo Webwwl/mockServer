@@ -12,11 +12,11 @@ router.post('/transStat/findInsStat.json', function(req, res, next) {
 function genData(params) {
   const { rangeType, statType } = params
   switch (statType) {
-    case 'trans_ovc':
+    case 'trans_scan':
       return genTransOvcData()
       break;
-    case 'trans_scan':
-      
+    case 'trans_ovc':
+      return genTransOvcData()
       break;
     case 'mer_ovc':
       
