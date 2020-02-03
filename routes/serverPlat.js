@@ -70,7 +70,7 @@ function genTransOvcData(rangeType) {
             {
               'currentValue|100-300': 1,
               'thirtyDayValue|50-250': 1,
-              date: Random.datetime('MM') + '月'
+              date: Random.datetime()
             }
           ]
         }
@@ -118,7 +118,7 @@ function genMerScanData(rangeType) {
           'list|12': [
             {
               'value|100-300': 0,
-              date: Random.datetime('MM') + '月'
+              date: Random.datetime()
             }
           ]
         }
