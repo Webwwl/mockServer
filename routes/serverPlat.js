@@ -13,16 +13,16 @@ function genData(params) {
   const { rangeType, statType } = params
   switch (statType) {
     case 'trans_scan':
-      return genTransOvcData()
+      return genTransOvcData(rangeType)
       break;
     case 'trans_ovc':
-      return genTransOvcData()
+      return genTransOvcData(rangeType)
       break;
     case 'mer_scan':
-      return genMerScanData()
+      return genMerScanData(rangeType)
       break;
     case 'mer_ovc':
-      return genMerScanData()
+      return genMerScanData(rangeType)
       break;
       break;
   
@@ -31,34 +31,102 @@ function genData(params) {
   }
 }
 
-function genTransOvcData() {
-  const ret = Mock.mock({
-    status: 0,
-    data: {
-      'list|7': [
-        {
-          'currentValue|100-300': 1,
-          'thirtyDayValue|50-250': 1,
-          date: Random.datetime()
+function genTransOvcData(rangeType) {
+  let ret
+  switch (rangeType) {
+    case 'week':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|7': [
+            {
+              'currentValue|100-300': 1,
+              'thirtyDayValue|50-250': 1,
+              date: Random.datetime()
+            }
+          ]
         }
-      ]
-    }
-  })
+      })
+      break;
+    case 'month':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|20': [
+            {
+              'currentValue|100-300': 1,
+              'thirtyDayValue|50-250': 1,
+              date: Random.datetime()
+            }
+          ]
+        }
+      })
+      break;
+    case 'year':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|12': [
+            {
+              'currentValue|100-300': 1,
+              'thirtyDayValue|50-250': 1,
+              date: Random.datetime('MM') + '月'
+            }
+          ]
+        }
+      })
+      break;
+    default:
+      break;
+  }
   return ret
 }
 
-function genMerScanData() {
-  const ret = Mock.mock({
-    status: 0,
-    data: {
-      'list|7': [
-        {
-          'value|100-300': 1,
-          date: Random.datetime()
+function genMerScanData(rangeType) {
+  let ret
+  switch (rangeType) {
+    case 'week':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|7': [
+            {
+              'value|100-300': 0,
+              date: Random.datetime()
+            }
+          ]
         }
-      ]
-    }
-  })
+      })
+      break;
+    case 'month':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|20': [
+            {
+              'value|100-300': 0,
+              date: Random.datetime()
+            }
+          ]
+        }
+      })
+      break;
+    case 'year':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|12': [
+            {
+              'value|100-300': 0,
+              date: Random.datetime('MM') + '月'
+            }
+          ]
+        }
+      })
+      break;
+    default:
+      break;
+  }
   return ret
 }
 module.exports = router;
