@@ -18,11 +18,12 @@ function genData(params) {
     case 'trans_ovc':
       return genTransOvcData()
       break;
-    case 'mer_ovc':
-      
-      break;
     case 'mer_scan':
-      
+      return genMerScanData()
+      break;
+    case 'mer_ovc':
+      return genMerScanData()
+      break;
       break;
   
     default:
@@ -38,6 +39,21 @@ function genTransOvcData() {
         {
           'currentValue|100-300': 1,
           'thirtyDayValue|50-250': 1,
+          date: Random.datetime()
+        }
+      ]
+    }
+  })
+  return ret
+}
+
+function genMerScanData() {
+  const ret = Mock.mock({
+    status: 0,
+    data: {
+      'list|7': [
+        {
+          'value|100-300': 1,
           date: Random.datetime()
         }
       ]
