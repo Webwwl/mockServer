@@ -76,6 +76,20 @@ function genTransOvcData(rangeType) {
         }
       })
       break;
+    case 'day':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|12': [
+            {
+              'currentValue|100-300': 1,
+              'thirtyDayValue|50-250': 1,
+              date: Random.datetime()
+            }
+          ]
+        }
+      })
+      break;
     default:
       break;
   }
@@ -112,6 +126,19 @@ function genMerScanData(rangeType) {
       })
       break;
     case 'year':
+      ret = Mock.mock({
+        status: 0,
+        data: {
+          'list|12': [
+            {
+              'value|100-300': 0,
+              date: Random.datetime()
+            }
+          ]
+        }
+      })
+      break;
+    case 'day':
       ret = Mock.mock({
         status: 0,
         data: {
