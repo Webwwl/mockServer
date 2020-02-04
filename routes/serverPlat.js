@@ -61,7 +61,7 @@ function genTransOvcData(rangeType) {
             {
               'currentValue|100-300': 1,
               'thirtyDayValue|50-250': 1,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
@@ -75,7 +75,7 @@ function genTransOvcData(rangeType) {
             {
               'currentValue|100-300': 1,
               'thirtyDayValue|50-250': 1,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
@@ -89,7 +89,7 @@ function genTransOvcData(rangeType) {
             {
               'currentValue|100-300': 1,
               'thirtyDayValue|50-250': 1,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM')
             }
           ]
         }
@@ -103,7 +103,7 @@ function genTransOvcData(rangeType) {
             {
               'currentValue|100-300': 1,
               'thirtyDayValue|50-250': 1,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
@@ -125,7 +125,7 @@ function genMerScanData(rangeType) {
           'list|7': [
             {
               'value|100-300': 0,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
@@ -138,7 +138,7 @@ function genMerScanData(rangeType) {
           'list|20': [
             {
               'value|100-300': 0,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
@@ -151,7 +151,7 @@ function genMerScanData(rangeType) {
           'list|12': [
             {
               'value|100-300': 0,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM')
             }
           ]
         }
@@ -164,7 +164,7 @@ function genMerScanData(rangeType) {
           'list|12': [
             {
               'value|100-300': 0,
-              date: Random.datetime()
+              date: Random.date('yyyy-MM-dd')
             }
           ]
         }
