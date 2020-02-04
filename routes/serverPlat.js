@@ -3,11 +3,30 @@ var router = express.Router();
 var Mock = require('mockjs')
 const { Random } = Mock
 /* GET home page. */
-router.post('/transStat/findInsStat.json', function(req, res, next) {
+router.post('/transStat/initChat.json', function(req, res, next) {
   const ret = genData(req.body)
   res.send(ret)
 });
 
+/* GET  */
+router.get('/transStat/findInsStat.json', function(req, res, next) {
+  const ret = genInsStat(req.body)
+  res.send(ret)
+});
+
+function genInsStat() {
+  return Mock.mock({
+    status: 0,
+    data: {
+      'sumAmtDay|1000000-2000000': 0,
+      'transCountDay|10000-30000': 0,
+      'sumAmtMonth|100000000-500000000': 0,
+      'transCountMonth|100000-500000': 0,
+      'newMerCountDay|100-500': 0,
+      'newMerCountMonth|10000-5000': 0,
+    }
+  })
+}
 
 function genData(params) {
   const { rangeType, statType } = params
